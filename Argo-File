@@ -1,9 +1,17 @@
 {
   "log": {
-      "disabled": false,
-      "level": "info",
-      "timestamp": true
-    },
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "local",
+        "tag": "local"
+      }
+    ]
+  },
   "route": {
     "rules": [
       {
@@ -11,16 +19,8 @@
         "action": "reject"
       }
     ]
-   },
-   "dns": {
-    "servers": [
-      {
-        "type": "local",
-        "tag": "local"
-      }
-    ]
-   },
-   "inbounds": [
+  },
+  "inbounds": [
     {
       "type": "vmess",
       "tag": "vmess-in",
@@ -44,18 +44,19 @@
           "Upgrade": "websocket",
           "Connection": "Upgrade"
         },
-        "max_early_data": 0
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
       }
     }
   ],
-   "outbounds": [
-     {
-       "type": "direct",
-       "tag": "direct-out",
-       "domain_resolver": {
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "direct-out",
+      "domain_resolver": {
         "server": "local",
         "strategy": "ipv4_only"
       }
     }
-  ],
+  ]
 }
