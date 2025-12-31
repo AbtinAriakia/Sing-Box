@@ -1,0 +1,51 @@
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+   "inbounds": [
+    {
+      "type": "vmess",
+      "tag": "vmess-in",
+      "listen": "::",
+      "listen_port": ,
+      "tcp_fast_open": true,
+      "users": [
+        {
+          "uuid": "",
+          "alterId": 0
+        }
+      ],
+      "tls": {
+        "enabled": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "",
+        "headers": {
+          "Host": "",
+          "Upgrade": "websocket",
+          "Connection": "Upgrade"
+        },
+        "max_early_data": 0
+      }
+    }
+  ],
+   "outbounds": [
+     {
+       "type": "direct",
+       "tag": "direct-out",
+       "domain_resolver": {
+        "server": "local",
+        "strategy": "ipv4_only"
+      }
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "protocol": "quic",
+        "outbound": "block"
+      }
+   ]
+}
