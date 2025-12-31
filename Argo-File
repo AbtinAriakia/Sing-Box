@@ -1,4 +1,17 @@
 {
+  "log": {
+      "disabled": false,
+      "level": "info",
+      "timestamp": true
+    },
+  "route": {
+    "rules": [
+      {
+        "protocol": "quic",
+        "action": "reject"
+      }
+    ]
+   },
    "inbounds": [
     {
       "type": "vmess",
@@ -37,12 +50,4 @@
       }
     }
   ],
-  "route": {
-    "rules": [
-      {
-        "protocol": "quic",
-        "action": "reject"
-      }
-    ]
-  }
 }
