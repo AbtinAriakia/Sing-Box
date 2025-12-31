@@ -7,8 +7,9 @@
   "dns": {
     "servers": [
       {
-        "type": "local",
-        "tag": "local"
+        "type": "https",
+        "server": "one.one.one.one",
+        "domain_resolver": "cloudflare"
       }
     ]
   },
@@ -34,7 +35,18 @@
         }
       ],
       "tls": {
-        "enabled": false
+        "enabled": true,
+        "server_name": "",
+        "alpn": ["http/1.1"],
+        "min_version": "1.3",
+        "cipher_suites": ["TLS_AES_128_GCM_SHA256"],
+        "curve_preferences": ["X25519"],
+        "certificate_path": "/root/cert.pem",
+        "key_path": "/root/key.pem",
+        "ech": {
+          "enabled": true,
+          "key_path": "/root/ech.pem"
+        }
       },
       "transport": {
         "type": "ws",
@@ -52,7 +64,7 @@
       "type": "direct",
       "tag": "direct-out",
       "domain_resolver": {
-        "server": "local",
+        "server": "one.one.one.one",
         "strategy": "ipv4_only"
       }
     }
