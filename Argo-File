@@ -12,6 +12,14 @@
       }
     ]
    },
+   "dns": {
+    "servers": [
+      {
+        "type": "local",
+        "tag": "local"
+      }
+    ]
+   },
    "inbounds": [
     {
       "type": "vmess",
