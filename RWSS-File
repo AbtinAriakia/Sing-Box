@@ -7,10 +7,11 @@
   "dns": {
     "servers": [
       {
-        "type": "local",
-        "tag": "local"
+        "type": "https",
+        "server": "1.1.1.1"
       }
-    ]
+    ],
+    "strategy": "ipv4_only"
   },
   "route": {
     "rules": [
@@ -40,8 +41,16 @@
         "min_version": "1.3",
         "cipher_suites": ["TLS_AES_128_GCM_SHA256"],
         "curve_preferences": ["X25519"],
-        "certificate_path": "/root/cert.pem",
-        "key_path": "/root/key.pem"
+        "reality": {
+          "enabled": false,
+          "handshake": {
+            "server": "",
+            "server_port": ,
+        },
+        "private_key": "",
+        "short_id": [""],
+        "max_time_difference": "1m"
+        }
       },
       "transport": {
         "type": "ws",
@@ -57,11 +66,7 @@
   "outbounds": [
     {
       "type": "direct",
-      "tag": "direct-out",
-      "domain_resolver": {
-        "server": "local",
-        "strategy": "ipv4_only"
-      }
+      "tag": "direct-out"
     }
   ]
 }
