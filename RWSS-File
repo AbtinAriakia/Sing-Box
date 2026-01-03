@@ -42,7 +42,7 @@
         "cipher_suites": ["TLS_AES_128_GCM_SHA256"],
         "curve_preferences": ["X25519"],
         "reality": {
-          "enabled": false,
+          "enabled": true,
           "handshake": {
             "server": "",
             "server_port": ,
