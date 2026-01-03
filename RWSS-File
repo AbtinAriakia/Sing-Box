@@ -46,10 +46,10 @@
           "handshake": {
             "server": "",
             "server_port": ,
-        },
-        "private_key": "",
-        "short_id": [""],
-        "max_time_difference": "1m"
+          },
+          "private_key": "",
+          "short_id": [""],
+          "max_time_difference": "1m"
         }
       },
       "transport": {
