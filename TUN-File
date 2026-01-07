@@ -10,7 +10,8 @@
         "type": "https",
         "server": "1.1.1.1"
       }
-    ]
+    ],
+    "strategy": "prefer_ipv6"
   },
   "route": {
     "rules": [
@@ -68,7 +69,6 @@
         "enabled": true,
         "disable_sni": false,
         "server_name": "",
-        "insecure": false,
         "alpn": ["http/1.1"],
         "min_version": "1.3",
         "cipher_suites": ["TLS_AES_128_GCM_SHA256"],
