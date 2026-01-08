@@ -1,0 +1,47 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "error",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "https",
+        "server": "1.1.1.1"
+      }
+    ],
+    "strategy": "prefer_ipv6"
+  },
+  "route": {
+    "rules": [
+      {
+        "protocol": "quic",
+        "action": "reject"
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "type": "shadowsocks",
+      "tag": "ss-in",
+      "listen": "::",
+      "listen_port": ,
+      "tcp_fast_open": true,
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "",
+      "managed": false
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "shadowsocks",
+      "tag": "ss-out",
+      "server": "",
+      "server_port": ,
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "",
+      "network": "tcp"
+    }
+  ]
+}
