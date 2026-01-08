@@ -2,6 +2,7 @@
   "log": {
     "disabled": false,
     "level": "error",
+    "output": "/root/sing-box.log",
     "timestamp": true
   },
   "dns": {
