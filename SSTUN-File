@@ -30,7 +30,9 @@
       "tcp_fast_open": true,
       "method": "2022-blake3-aes-256-gcm",
       "password": "",
-      "managed": false
+      "multiplex": {
+        "enabled": true
+      }
     }
   ],
   "outbounds": [
