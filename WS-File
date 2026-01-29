@@ -1,53 +1,50 @@
 {
   "log": {
-    "level": "info",
+    "disabled": false,
+    "level": "error",
+    "output": "/root/sing-box.log",
     "timestamp": true
   },
-   "inbounds": [
+  "route": {
+    "rules": [
+      {
+        "protocol": "quic",
+        "action": "reject"
+      }
+    ]
+  },
+  "inbounds": [
     {
       "type": "vmess",
       "tag": "vmess-in",
-      "listen": "::",
+      "listen": "0.0.0.0",
       "listen_port": ,
       "tcp_fast_open": true,
-      "tcp_multi_path": true,
-      "domain_strategy": "ipv4_only",
       "users": [
         {
           "uuid": "",
-          "alterId": 1
+          "alterId": 0
         }
       ],
       "tls": {
-        "enabled": true,
-        "server_name": "",
-        "alpn": [],
-        "min_version": "",
-        "certificate_path": "",
-        "key_path": ""
+        "enabled": false
       },
       "transport": {
         "type": "ws",
-        "path": "/"
+        "path": "",
+        "headers": {
+          "Host": "",
+          "Connection": "Upgrade",
+          "Upgrade": "websocket"
+        },
+        "max_early_data": 0
       }
     }
   ],
-   "outbounds": [
-     {
-       "type": "direct",
-       "tag": "direct"
-       },
-     {
-       "type": "block",
-       "tag": "block"
-     }
-  ],
-   "route": {
-     "rules": [
-       {
-       "network": ["udp"],
-       "outbound": "block"
-     }
-   ]
-  }
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "direct-out"
+    }
+  ]
 }
