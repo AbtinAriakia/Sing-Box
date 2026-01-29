@@ -10,7 +10,7 @@
         "protocol": "quic",
         "action": "reject"
       }
-    ]
+   ]
    "inbounds": [
     {
       "type": "vmess",
