@@ -5,13 +5,15 @@
     "output": "/root/sing-box.log",
     "timestamp": true
   },
-  "rules": [
+  "route": {
+    "rules": [
       {
         "protocol": "quic",
         "action": "reject"
       }
-   ]
-   "inbounds": [
+    ]
+  },
+  "inbounds": [
     {
       "type": "vmess",
       "tag": "vmess-in",
@@ -45,10 +47,10 @@
       }
     }
   ],
-   "outbounds": [
-     {
-       "type": "direct",
-       "tag": "direct-out"
-     }
-  ],
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "direct-out"
+    }
+  ]
 }
