@@ -8,8 +8,12 @@
   "route": {
     "rules": [
       {
-        "protocol": "quic",
-        "action": "reject"
+        "protocol": ["quic"],
+        {
+          "action": "reject",
+          "method": "default",
+          "no_drop": false
+        }
       }
     ]
   },
