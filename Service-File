@@ -7,7 +7,7 @@ ExecStart=/root/sing-box run -c /root/config.json
 Restart=on-failure
 RestartSec=3s
 NoNewPrivileges=true
-LimitNOFILE=1048576
+LimitNOFILE=infinity
 
 [Install]
 WantedBy=multi-user.target
