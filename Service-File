@@ -1,11 +1,13 @@
 [Unit]
 Description=sing-box Service
+Documentation=https://sing-box.sagernet.org
 After=network-online.target
 
 [Service]
 ExecStart=/root/sing-box run -c /root/config.json
+ExecReload=/bin/kill -HUP $MAINPID
 Restart=on-failure
-RestartSec=3s
+RestartSec=10s
 NoNewPrivileges=true
 LimitNOFILE=infinity
 
