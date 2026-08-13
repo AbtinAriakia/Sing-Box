@@ -4,7 +4,7 @@ Documentation=https://sing-box.sagernet.org
 After=network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/sing-box run -c /etc/sifolder/config.json
+ExecStart=/usr/local/bin/sing-box run -c /etc/sfolder/config.json
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=on-failure
 RestartSec=10s
