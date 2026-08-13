@@ -2,7 +2,7 @@
   "log": {
     "disabled": false,
     "level": "error",
-    "output": "/root/sing-box.log",
+    "output": "/etc/sfolder/sing-box.log",
     "timestamp": true
   },
   "dns": {
@@ -23,14 +23,17 @@
   },
   "inbounds": [
     {
-      "type": "snell",
-      "tag": "snell-in",
+      "type": "socks",
+      "tag": "socks-in",
       "listen": "::",
       "listen_port": ,
       "tcp_fast_open": true,
-      "version": 6,
-      "psk": "password",
-      "mode": "default"
+      "users": [
+        {
+          "username": "",
+          "password": ""
+        }
+      ]
     }
   ],
   "outbounds": [
