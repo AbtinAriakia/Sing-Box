@@ -36,7 +36,7 @@
   "outbounds": [
     {
       "type": "direct",
-      "tag": "direct-out"
+      "tag": "direct-out",
       "domain_resolver": {
         "server": "local",
         "strategy": "ipv4_only"
