@@ -30,12 +30,6 @@
       "tcp_fast_open": true,
       "version": 6,
       "psk": "password",
-      "users": [
-        {
-          "name": "sekai",
-          "userkey": "user-password"
-        }
-      ],
       "mode": "default"
     }
   ],
